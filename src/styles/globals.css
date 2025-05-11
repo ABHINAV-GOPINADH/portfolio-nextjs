@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: rgb(169, 115, 219);
+}
+
+/* styles/globals.css */
+.nav-link {
+    @apply text-white text-lg transition-colors duration-300 hover:text-yellow-400 cursor-pointer;
+  }
+  .services-section {
+    background-color: #2D124D;
+    color: white;
+    padding: 5rem 1.5rem;
+    min-height: 70vh;
+  }
+  
+
+  /* Styles for Serivce Components*/
+  .services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .services-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #facc15; /* yellow-400 */
+    margin-bottom: 3rem;
+  }
+  
+  .services-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .service-card {
+    background-color: #3A1B5A;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .service-icon {
+    font-size: 2rem;
+    color: #facc15;
+    margin-bottom: 1rem;
+  }
+  
+  .service-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .service-list {
+    list-style: disc;
+    text-align: left;
+    padding-left: 1.2rem;
+    color: #d1d5db; /* gray-300 */
+    font-size: 0.9rem;
+  }
+  
+
+  /* Styles for Work Component */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  
+  .work-card {
+    background-color: #2d0452;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+  }
+  
+  .work-img {
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+  
+  .work-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+    color: white;
+  }
+  
+  .work-card-title {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+  
+  .work-card-description {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .work-github-link {
+    background-color: #9333ea;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .work-github-link:hover {
+    background-color: #7e22ce;
+  }
+  
+  /* Styles for Contact Component */
+  .contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    background-color: #2d0452;
+  }
+  
+  .contact-container {
+    background-color: #552780;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 80rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 768px) {
+    .contact-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .contact-info {
+    background-color: #471572;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .contact-info-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-info-desc {
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-info-details p {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .contact-form {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  .form-textarea {
+    height: 7rem;
+    resize: none;
+  }
+  
+  .form-button {
+    background-color: #9333ea;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .form-button:hover {
+    background-color: #70ada8;
+  }
+  
