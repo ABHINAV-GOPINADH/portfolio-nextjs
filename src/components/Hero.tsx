@@ -22,7 +22,7 @@ const Hero = () => {
 
 
         <h2 className="text-xl md:text-2xl font-medium text-indigo-200">
-          I'm a Graphic designer & Frontend developer.
+          I&#39;m a Graphic designer &amp; Frontend developer.
         </h2>
 
         <div className="flex gap-4 mt-6">

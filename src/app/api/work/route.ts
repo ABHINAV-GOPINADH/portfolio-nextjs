@@ -8,6 +8,7 @@ export async function GET() {
     const work = await Work.find();
     return NextResponse.json(work, { status: 200 });
   } catch (error) {
+    console.error("Error fetching projects:", error); // ✅ Use the variable
     return NextResponse.json({ error: "Failed to fetch projects" }, { status: 500 });
   }
 }

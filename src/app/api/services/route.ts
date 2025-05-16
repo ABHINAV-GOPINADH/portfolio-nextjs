@@ -8,6 +8,7 @@ export async function GET() {
     const services = await Service.find();
     return NextResponse.json(services);
   } catch (error) {
+    console.error("Error fetching services:", error); // ✅ Use the variable
     return NextResponse.json({ message: "Error fetching services" }, { status: 500 });
   }
 }
