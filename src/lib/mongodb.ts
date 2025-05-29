@@ -1,4 +1,3 @@
-// src/lib/mongoose.ts
 import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI || "";
@@ -8,7 +7,16 @@ if (!MONGODB_URI) {
   throw new Error("⚠️ Please define the MONGODB_URI environment variable in .env.local");
 }
 
-let cached = (global as any).mongoose || { conn: null, promise: null };
+interface Cached {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
+}
+
+const globalWithMongoose = global as typeof globalThis & {
+  mongoose: Cached;
+};
+
+const cached: Cached = globalWithMongoose.mongoose || { conn: null, promise: null };
 
 export async function connectToDB() {
   if (cached.conn) return cached.conn;
@@ -23,5 +31,6 @@ export async function connectToDB() {
   }
 
   cached.conn = await cached.promise;
+  globalWithMongoose.mongoose = cached;
   return cached.conn;
 }
