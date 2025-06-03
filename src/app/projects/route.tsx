@@ -1,11 +1,13 @@
 
 import { connectToDB } from '@/lib/mongodb';
+import mongoose from 'mongoose';
 import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const database = await connectToDB();
-    const db = database.db("portfolio"); // your DB name
+    await connectToDB();
+
+    const db = mongoose.connection.db!;
     const projects = await db.collection("projects").find({}).toArray();
     return NextResponse.json(projects);
   } catch (error) {
