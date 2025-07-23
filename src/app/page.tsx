@@ -9,7 +9,7 @@ console.log({ Hero, Services, About, Work, Contact });
 
 export default async function Home() {  
   return (
-    <main className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10">
+    <main className="w-full m-0 p-0 overflow-x-hidden">
       <Navbar/>
       <Hero />
       <Services/>

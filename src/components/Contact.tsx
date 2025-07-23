@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -38,24 +39,42 @@ const Contact = () => {
   };
 
   return (
-    <section className="contact-section" id="contact">
-      <div className="contact-container">
-        <div className="contact-info">
-          <h2 className="contact-info-title">Get in Touch</h2>
-          <p className="contact-info-desc">I’d love to hear from you!</p>
-          <div className="contact-info-details">
-            <p>Email: your@email.com</p>
-            <p>Phone: +91 12345 67890</p>
+    <section id="contact" className="w-full bg-[#22014b] text-white py-16 px-4 md:px-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 bg-[#3b0a75] rounded-2xl p-8 shadow-lg">
+
+        {/* Left side: Contact Info */}
+      <div className="flex flex-col justify-between items-start">
+        <div>
+          <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
+          <p className="text-gray-300 mb-6">
+            I'd love to hear from you! Feel free to reach out using the form or contact info below.
+          </p>
+
+          {/* Inserted Image */}
+          <div className="w-full flex justify-center my-6">
+          <img
+            src="/contact_us.png"
+            alt="Contact Icon"
+            className="w-40 h-40 object-contain mx-auto drop-shadow-xl"
+          />
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <h3 className="form-title">Send a Message</h3>
+        <div className="mt-6 space-y-2">
+          <p><span className="font-semibold text-purple-300">Email:</span> abhinavgopinadh@gmail.com</p>
+          <p><span className="font-semibold text-purple-300">Phone:</span> +91 8590353527</p>
+        </div>
+      </div>
+
+
+        {/* Right side: Contact Form */}
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <h3 className="text-2xl font-semibold mb-4">Send a Message</h3>
           <input
             type="text"
             name="name"
             placeholder="Your Name"
-            className="form-input"
+            className="w-full p-3 rounded-md bg-white text-black"
             value={formData.name}
             onChange={handleChange}
             required
@@ -64,7 +83,7 @@ const Contact = () => {
             type="email"
             name="email"
             placeholder="Your Email"
-            className="form-input"
+            className="w-full p-3 rounded-md bg-white text-black"
             value={formData.email}
             onChange={handleChange}
             required
@@ -73,7 +92,7 @@ const Contact = () => {
             type="text"
             name="subject"
             placeholder="Subject"
-            className="form-input"
+            className="w-full p-3 rounded-md bg-white text-black"
             value={formData.subject}
             onChange={handleChange}
             required
@@ -81,18 +100,23 @@ const Contact = () => {
           <textarea
             name="message"
             placeholder="Your Message"
-            className="form-textarea"
+            className="w-full p-3 h-32 rounded-md bg-white text-black"
             value={formData.message}
             onChange={handleChange}
             required
           ></textarea>
-          <button type="submit" className="form-button">
+          <button
+            type="submit"
+            className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-md transition duration-200"
+          >
             Send
           </button>
         </form>
+
       </div>
     </section>
   );
+
 };
 
 export default Contact;
