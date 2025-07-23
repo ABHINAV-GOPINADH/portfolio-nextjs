@@ -47,7 +47,7 @@ const Contact = () => {
         <div>
           <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
           <p className="text-gray-300 mb-6">
-            I'd love to hear from you! Feel free to reach out using the form or contact info below.
+            I&rsquo;d love to hear from you! Feel free to reach out using the form or contact info below.
           </p>
 
           {/* Inserted Image */}
