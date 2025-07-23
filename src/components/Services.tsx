@@ -32,27 +32,40 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="services-section" id="services">
-      <div className="services-container">
-        <h2 className="services-title">My Services</h2>
-        <div className="services-grid">
-          {services.map((service, index) => (
-            <article key={index} className="service-card">
-              <div className="service-icon">
+  <section className="py-10 bg-[#0e0e1c]" id="services">
+    <div className="px-6">
+      <h2 className="text-3xl font-bold text-white mb-6 text-center">
+        My Services
+      </h2>
+
+      {/* Scrollable Row */}
+      <div className="flex overflow-x-auto space-x-6 scrollbar-hide">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 w-[300px] h-[360px] bg-gray-900 text-white rounded-xl shadow-lg p-5 flex flex-col justify-between"
+          >
+            <div>
+              <div className="text-4xl text-purple-400 mb-4">
                 {iconMap[service.icon] ?? <FaTools />}
               </div>
-              <h3 className="service-heading">{service.title}</h3>
-              <ul className="service-list">
+              <h3 className="text-lg font-semibold mb-2 truncate">
+                {service.title}
+              </h3>
+              <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
                 {service.features.map((feature, idx) => (
                   <li key={idx}>{feature}</li>
                 ))}
               </ul>
-            </article>
-          ))}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
+
+
 };
 
 export default Services;

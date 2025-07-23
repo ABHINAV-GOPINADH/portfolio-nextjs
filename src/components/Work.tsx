@@ -28,29 +28,29 @@ const Work = () => {
 
   return (
     <section className="work-section" id="work">
-      <h2 className="work-title">My Work</h2>
-      <div className="work-grid">
+      <h2 className="text-3xl font-bold text-center mb-6">My Work</h2>
+      <div className="flex overflow-x-auto space-x-6 px-4 py-2 scrollbar-hide">
         {works.map((work) => (
-          <div key={work._id} className="work-card">
-            <div className="work-img-container">
+          <div key={work._id} className="flex-shrink-0 w-[300px] h-[400px] bg-[#1f2937] text-white rounded-xl shadow-lg p-4 flex flex-col justify-between">
+            <div className="w-full h-[180px] overflow-hidden rounded-md mb-2">
               <img
                 src={work.image}
                 alt={work.title}
                 width={400}
                 height={200}
-                className="work-img"
+                className="w-full h-full object-cover rounded"
                 onError={(e) => {
                   e.currentTarget.src = "/error.jpg";
                 }}
               />
             </div>
-            <h3 className="work-card-title">{work.title}</h3>
-            <p className="work-card-description">{work.description}</p>
+            <h3 className="text-lg font-semibold truncate">{work.title}</h3>
+            <p className="text-sm text-gray-300 overflow-hidden text-ellipsis line-clamp-3">{work.description}</p>
             <a
               href={work.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="work-github-link"
+              className="mt-4 text-center bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 rounded"
             >
               View on GitHub
             </a>
