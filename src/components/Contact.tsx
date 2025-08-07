@@ -55,7 +55,7 @@ const Contact = () => {
           <img
             src="/contact_us.png"
             alt="Contact Icon"
-            className="w-40 h-40 object-contain mx-auto drop-shadow-xl"
+            className="w-60 h-60 object-contain mx-auto drop-shadow-xl"
           />
           </div>
         </div>
