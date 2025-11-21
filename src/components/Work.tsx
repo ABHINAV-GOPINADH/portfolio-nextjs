@@ -27,7 +27,7 @@ const Work = () => {
   }, []);
 
   return (
-    <section className="work-section" id="work">
+    <section className="work-section mt-16" id="work">
       <h2 className="text-3xl font-bold text-center mb-6">My Work</h2>
       <div className="flex overflow-x-auto space-x-6 px-4 py-2 scrollbar-hide">
         {works.map((work) => (
