@@ -26,7 +26,7 @@ const Hero = () => {
         </h2>
         <div className="flex gap-4 mt-6">
           <a
-            href="/Abhinav_Gopinadh_Resume.pdf"
+            href="/ABHINAV_K_G.pdf"
             download
             className="bg-yellow-400 text-black font-semibold py-2 px-6 rounded-full hover:bg-yellow-300 transition-all duration-300"
           >
